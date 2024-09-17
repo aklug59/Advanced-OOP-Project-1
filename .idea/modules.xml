@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Advanced-OOP-Project-1.iml" filepath="$PROJECT_DIR$/.idea/Advanced-OOP-Project-1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Test Suite/Test Suite.iml" filepath="$PROJECT_DIR$/Test Suite/Test Suite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Test Suite/Test Suite.iml" filepath="$PROJECT_DIR$/src/Test Suite/Test Suite.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/test/java/logic/logic.iml" filepath="$PROJECT_DIR$/src/test/java/logic/logic.iml" />
     </modules>
   </component>
