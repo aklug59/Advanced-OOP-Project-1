@@ -1,21 +1,17 @@
 import java.util.ArrayList;
 
 public class Plateau {
-    private int[] plateauDimensions = new int[2];
 
-    public int plateauXMax = 0;
-    public int PlateauYMax = 0;
+    public static int plateauXMax = 0;
+    public static int plateauYMax = 0;
     public boolean plateauMade = false;
     int intValue;
 
     public Plateau(ArrayList<Character> initialDimensions) {
 
         if (!plateauMade) {
-            for(int i = 0; i < initialDimensions.size(); i++) {
-                intValue = Integer.valueOf(initialDimensions.get(i));
-                plateauDimensions[i] = intValue;
-            }
-
+            plateauXMax = Character.getNumericValue(initialDimensions.get(0));
+            plateauYMax = Character.getNumericValue(initialDimensions.get(1));
             this.plateauMade = true;
 
         } else {
@@ -26,17 +22,15 @@ public class Plateau {
 
     }
 
-    public int getPlateauXMax() {
+    public static int getPlateauXMax() {
         return plateauXMax;
     }
 
-    public int getPlateauYMax() {
-        return PlateauYMax;
+    public static int getPlateauYMax() {
+        return plateauYMax;
     }
 
     //Return the arraylist with the current dimensions of the plateau.
-    public int[] getPlateauDimensions() {
-        return plateauDimensions;
-    }
+
 
 }
