@@ -2,33 +2,35 @@ import java.util.ArrayList;
 
 public class Rover {
 
-    static char noHeading = 't';
+    //Variable and Data structure declarations
+    static char currHeading = ' ';
     private static int[] currPosition = new int[2];
-    static char currHeading = noHeading;
     GUI localRoverGUI =  new GUI();
-    private static char[] headingsList = {'N','E','S','W'};
+    private static final char[] headingsList = {'N','E','S','W'};
+    static int maxXPosition = Plateau.getPlateauXMax();
+    static int maxYPosition = Plateau.getPlateauYMax();
+    public static boolean finalCommand = false;
 
 
+    //Rover constructor, takes an ArrayList containing the rovers starting position and heading
 
     public Rover(ArrayList<Character> newRover) {
         currPosition[0] = Character.getNumericValue(newRover.get(0));
         currPosition[1] = Character.getNumericValue(newRover.get(1));
         currHeading = newRover.get(2);
-
         localRoverGUI.addGUIRoverIcon(currPosition, currHeading);
-
-        System.out.println("The rovers position is " + currPosition[0] + " " + currPosition[1] + " " + currHeading);
     }
 
 
-
     public static void moveRover(ArrayList<Character> moveCommand) {
+
         //Logic to move the rover by updating currPosition + currHeading AND send update the GUI.
 
-        int maxXPosition = Plateau.getPlateauXMax();
-        int maxYPosition = Plateau.getPlateauYMax();
-
+        //For every character in the movement command, get the character and then perform appropriate logic is L, R or M
         for (int i = 0; i < moveCommand.size(); i++) {
+            if (i == moveCommand.size() - 1) {
+                finalCommand = true;
+            }
 
             char currMovementCommand = moveCommand.get(i);
 
@@ -103,9 +105,15 @@ public class Rover {
                 default:
                     // code block
             }
-            System.out.println("The rover is now at " + currPosition[0] + " " + currPosition[1] + " Heading is " + currHeading);
         }
+    if (finalCommand) {
+        printRoverPosition();
+    }
 
+    }
+
+    public static void printRoverPosition() {
+        System.out.println("The rover is now at " + currPosition[0] + " " + currPosition[1] + ", Heading is " + currHeading);
 
     }
 }
