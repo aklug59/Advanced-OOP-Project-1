@@ -19,17 +19,21 @@ public class InputFilter {
 
             //If the last character in the list is a digit, plateau, else rover position
             if (Character.isDigit(characterList.get(characterListLength - 1))) {
+                System.out.println("We have a new plat!");
                 new Plateau(characterList);
 
             } else {
                 System.out.println("We have a new rover!");
+                new Rover(characterList);
                 //NEW ROVER CASE
             }
 
         //If the first character is a char, we have a movement command.
         } else {
             System.out.println("We have a movement command!");
-            //ROVER MOVEMENT COMMAND CASE
+            Rover.moveRover(characterList);
+
+
 
         }
 
