@@ -4,7 +4,7 @@ public class Rover {
 
     //Variable and Data structure declarations
     static char currHeading = ' ';
-    private static int[] currPosition = new int[2];
+    static int[] currPosition = new int[2];
     GUI localRoverGUI =  new GUI();
     private static final char[] headingsList = {'N','E','S','W'};
     static int maxXPosition = Plateau.getPlateauXMax();
