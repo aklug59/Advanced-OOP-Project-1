@@ -46,4 +46,55 @@ public class InputFilterTests {
 
    }
 
+   @Test
+    public void inputFilterRoverBottomBoundaryTest() {
+        int[] expectedPosition = {3,0};
+        // Create plateau size 5x5
+        inputFilterTestObject.inputIdentifier("5 5");
+        // Put a rover on plateau, top right of 5x5
+        inputFilterTestObject.inputIdentifier("3 3 S");
+        // Turn rover towards 'S', then move past bottom boundary
+        inputFilterTestObject.inputIdentifier("MMMMMM");
+        // Should stay at y=0
+        assertArrayEquals(expectedPosition, Rover.currPosition);
+   }
+
+    @Test
+    public void inputFilterRoverTopBoundaryTest() {
+        int[] expectedPosition = {3,5};
+        // Create plateau size 5x5
+        inputFilterTestObject.inputIdentifier("5 5");
+        // Put a rover on plateau, bottom right of 5x5
+        inputFilterTestObject.inputIdentifier("3 3 N");
+        // Turn rover towards 'S', then move past bottom boundary
+        inputFilterTestObject.inputIdentifier("MMMMMM");
+        // Should stay at y=5
+        assertArrayEquals(expectedPosition, Rover.currPosition);
+    }
+
+    @Test
+    public void inputFilterRoverLeftBoundaryTest() {
+        int[] expectedPosition = {0,3};
+        // Create plateau size 5x5
+        inputFilterTestObject.inputIdentifier("5 5");
+        // Put a rover on plateau, bottom right of 5x5
+        inputFilterTestObject.inputIdentifier("3 3 W");
+        // Turn rover towards 'S', then move past bottom boundary
+        inputFilterTestObject.inputIdentifier("MMMMMM");
+        // Should stay at y=5
+        assertArrayEquals(expectedPosition, Rover.currPosition);
+    }
+
+    @Test
+    public void inputFilterRoverRightBoundaryTest() {
+        int[] expectedPosition = {5,3};
+        // Create plateau size 5x5
+        inputFilterTestObject.inputIdentifier("5 5");
+        // Put a rover on plateau, bottom right of 5x5
+        inputFilterTestObject.inputIdentifier("3 3 E");
+        // Turn rover towards 'S', then move past bottom boundary
+        inputFilterTestObject.inputIdentifier("MMMMMM");
+        // Should stay at y=5
+        assertArrayEquals(expectedPosition, Rover.currPosition);
+    }
 }
