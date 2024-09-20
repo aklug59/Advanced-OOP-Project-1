@@ -1,6 +1,4 @@
 import org.junit.Test;
-import org.junit.Assert;
-
 import static org.junit.Assert.*;
 
 public class InputFilterTests {
@@ -8,8 +6,10 @@ public class InputFilterTests {
     @Test
     public void inputFilterPlateauTest() {
         int[] expected = {0,0};
+
         //Create a new plateau of size 5 x 5
         inputFilterTestObject.inputIdentifier("5 5");
+        
         //Confirm that the created Plateau has x and y values of 5 and 5 respectively.
         assertEquals(5, Plateau.plateauXMax);
         assertEquals(5, Plateau.plateauYMax);
