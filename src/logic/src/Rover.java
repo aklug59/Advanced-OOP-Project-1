@@ -34,10 +34,13 @@ public class Rover {
 
                 case 'L':
                     position.heading = position.heading.ninetyDegreesLeft();
+                    break;
                 case 'R':
                     position.heading = position.heading.ninetyDegreesRight();
+                    break;
                 case 'M':
                     position.moveOne();
+                    break;
                 default:
                     // code block
             }
