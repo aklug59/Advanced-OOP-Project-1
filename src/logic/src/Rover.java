@@ -13,7 +13,7 @@ public class Rover {
     //Rover constructor, takes an ArrayList containing the rovers starting position and heading
 
     public Rover(ArrayList<Character> newRover) {
-        position = new Position(newRover.get(0), newRover.get(1), CardinalDirection.fromCharacter(newRover.get(2)));
+        position = new Position(Character.digit(newRover.get(0), 10), Character.digit(newRover.get(1), 10), CardinalDirection.fromCharacter(newRover.get(2)));
         localRoverGUI.addGUIRoverIcon(position);
     }
 
@@ -37,6 +37,7 @@ public class Rover {
                 case 'R':
                     position.heading = position.heading.ninetyDegreesRight();
                 case 'M':
+                    position.moveOne();
                 default:
                     // code block
             }
