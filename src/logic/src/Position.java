@@ -27,5 +27,18 @@ public class Position {
         this.y = y;
         this.heading = heading;
     }
+
+    final void moveOne() {
+        switch (heading) {
+            case CardinalDirection.NORTH:
+                y += 1;
+            case CardinalDirection.EAST:
+                x += 1;
+            case CardinalDirection.SOUTH:
+                y -= 1;
+            case CardinalDirection.WEST:
+                x -= 1;
+        }
+    }
 }
 
