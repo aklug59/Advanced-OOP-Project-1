@@ -18,7 +18,7 @@ public class InputFilterTests {
 
     @Test
     public void inputFilterRoverCreationTest() {
-        final var expectedPosition = new Position(0,0, CardinalDirection.NORTH);
+        final var expectedPosition = new Position(2,2, CardinalDirection.NORTH);
 
         //Put a rover on the plateau at position 2 2 facing N
         inputFilterTestObject.inputIdentifier("2 2 N");
