@@ -18,20 +18,19 @@ public class InputFilterTests {
 
     @Test
     public void inputFilterRoverCreationTest() {
-        int[] expectedPosition = {2,2};
+        final var expectedPosition = new Position(2,2, CardinalDirection.NORTH);
 
         //Put a rover on the plateau at position 2 2 facing N
         inputFilterTestObject.inputIdentifier("2 2 N");
 
         //Expected output should be (0 0) and 'N', Check Rover currPosition Array and currHeading Char
-        assertArrayEquals(expectedPosition, Rover.currPosition);
-        assertEquals('N',Rover.currHeading);
+        assertEquals(expectedPosition, Rover.position);
     }
 
 
    @Test
    public void inputFilterRoverMoveTest() {
-       int[] expectedPosition = {0,0};
+       final var expectedPosition = new Position(0,0, CardinalDirection.SOUTH);
 
        //Put a rover on the plateau at position 2 2 facing N
        inputFilterTestObject.inputIdentifier("2 2 N");
@@ -40,15 +39,12 @@ public class InputFilterTests {
        inputFilterTestObject.inputIdentifier("LMMLMM");
 
        //Expected output should be (0 0 S), Check Rover currPosition Array and currHeading Char
-       assertArrayEquals(expectedPosition, Rover.currPosition);
-       assertEquals('S', Rover.currHeading);
-
-
+       assertEquals(expectedPosition, Rover.position);
    }
 
    @Test
     public void inputFilterRoverBottomBoundaryTest() {
-        int[] expectedPosition = {3,0};
+        final var expectedPosition = new Position(3,0,CardinalDirection.SOUTH);
         // Create plateau size 5x5
         inputFilterTestObject.inputIdentifier("5 5");
         // Put a rover on plateau, top right of 5x5
@@ -56,12 +52,12 @@ public class InputFilterTests {
         // Turn rover towards 'S', then move past bottom boundary
         inputFilterTestObject.inputIdentifier("MMMMMM");
         // Should stay at y=0
-        assertArrayEquals(expectedPosition, Rover.currPosition);
+        assertEquals(expectedPosition, Rover.position);
    }
 
     @Test
     public void inputFilterRoverTopBoundaryTest() {
-        int[] expectedPosition = {3,5};
+        final var expectedPosition = new Position(3,5,CardinalDirection.NORTH);
         // Create plateau size 5x5
         inputFilterTestObject.inputIdentifier("5 5");
         // Put a rover on plateau, bottom right of 5x5
@@ -69,12 +65,12 @@ public class InputFilterTests {
         // Turn rover towards 'S', then move past bottom boundary
         inputFilterTestObject.inputIdentifier("MMMMMM");
         // Should stay at y=5
-        assertArrayEquals(expectedPosition, Rover.currPosition);
+        assertEquals(expectedPosition, Rover.position);
     }
 
     @Test
     public void inputFilterRoverLeftBoundaryTest() {
-        int[] expectedPosition = {0,3};
+        final var expectedPosition = new Position(0,3,CardinalDirection.WEST);
         // Create plateau size 5x5
         inputFilterTestObject.inputIdentifier("5 5");
         // Put a rover on plateau, bottom right of 5x5
@@ -82,12 +78,12 @@ public class InputFilterTests {
         // Turn rover towards 'S', then move past bottom boundary
         inputFilterTestObject.inputIdentifier("MMMMMM");
         // Should stay at y=5
-        assertArrayEquals(expectedPosition, Rover.currPosition);
+        assertEquals(expectedPosition, Rover.position);
     }
 
     @Test
     public void inputFilterRoverRightBoundaryTest() {
-        int[] expectedPosition = {5,3};
+        final var expectedPosition = new Position(5,3,CardinalDirection.EAST);
         // Create plateau size 5x5
         inputFilterTestObject.inputIdentifier("5 5");
         // Put a rover on plateau, bottom right of 5x5
@@ -95,6 +91,6 @@ public class InputFilterTests {
         // Turn rover towards 'S', then move past bottom boundary
         inputFilterTestObject.inputIdentifier("MMMMMM");
         // Should stay at y=5
-        assertArrayEquals(expectedPosition, Rover.currPosition);
+        assertEquals(expectedPosition, Rover.position);
     }
 }
