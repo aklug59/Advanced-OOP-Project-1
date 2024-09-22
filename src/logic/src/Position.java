@@ -36,28 +36,28 @@ public class Position {
                 if (y < Plateau.getPlateauYMax()) {
                     y += 1;
                 } else {
-                    // Error Handling TODO
+                    ErrorHandler.roverOutOfBounds();
                 }
                 break;
             case CardinalDirection.EAST:
                 if (x < Plateau.getPlateauXMax()) {
                     x += 1;
                 } else {
-                    // Error Handling TODO
+                    ErrorHandler.roverOutOfBounds();
                 }
                 break;
             case CardinalDirection.SOUTH:
                 if (y > 0) {
                     y -= 1;
                 } else {
-                    // Error Handling TODO
+                    ErrorHandler.roverOutOfBounds();
                 }
                 break;
             case CardinalDirection.WEST:
                 if (x > 0) {
                     x -= 1;
                 } else {
-                    // Error Handling TODO
+                    ErrorHandler.roverOutOfBounds();
                 }
                 break;
         }

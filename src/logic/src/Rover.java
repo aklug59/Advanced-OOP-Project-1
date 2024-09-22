@@ -44,10 +44,13 @@ public class Rover {
                 default:
                     // code block
             }
+
+            if (finalCommand) {
+                printRoverPosition();
+                break;
+            }
         }
-    if (finalCommand) {
-        printRoverPosition();
-    }
+
 
     }
 

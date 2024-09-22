@@ -5,5 +5,6 @@ public class Main {
         InputFilter.inputIdentifier("5 5");
         InputFilter.inputIdentifier("5 5 N");
         InputFilter.inputIdentifier("LLMMMMMRMMMMMM");
+
     }
 }
