@@ -37,7 +37,7 @@ public class GUI {
         //Logic to create a JFrame out of Plateau dimensions
     }
 
-    public void addGUIRoverIcon(int[] currPosition, char currHeading) {
+    public void addGUIRoverIcon(final Position position) {
         //Logic to add a rover icon to the current GUI
     }
 
