@@ -1,9 +1,10 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Rover {
 
     //Variable and Data structure declarations
-    GUI localRoverGUI =  new GUI();
+    GUI localRoverGUI =  GUI.getGUI();
     static int maxXPosition = Plateau.getPlateauXMax();
     static int maxYPosition = Plateau.getPlateauYMax();
     public static boolean finalCommand = false;

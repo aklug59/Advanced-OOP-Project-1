@@ -5,8 +5,7 @@ public class Plateau {
     public static int plateauXMax = 0;
     public static int plateauYMax = 0;
     public boolean plateauMade = false;
-
-    private final GUI plateauLocalGUI =  new GUI();
+    private final GUI plateauLocalGUI =  GUI.getGUI();
     int intValue;
 
     public Plateau(ArrayList<Character> initialDimensions) {
