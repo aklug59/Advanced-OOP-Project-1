@@ -4,8 +4,6 @@ public class Rover {
 
     //Variable and Data structure declarations
     GUI localRoverGUI =  new GUI();
-    static int maxXPosition = Plateau.getPlateauXMax();
-    static int maxYPosition = Plateau.getPlateauYMax();
     public static boolean finalCommand = false;
     static Position position;
 
