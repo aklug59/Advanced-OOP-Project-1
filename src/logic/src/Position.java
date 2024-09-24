@@ -33,14 +33,14 @@ public class Position {
     final void moveOne() {
         switch (heading) {
             case CardinalDirection.NORTH:
-                if (y < Plateau.getPlateauYMax()) {
+                if (y < Plateau.getPlateauYMax()-1) {
                     y += 1;
                 } else {
                     ErrorHandler.roverOutOfBounds();
                 }
                 break;
             case CardinalDirection.EAST:
-                if (x < Plateau.getPlateauXMax()) {
+                if (x < Plateau.getPlateauXMax()-1) {
                     x += 1;
                 } else {
                     ErrorHandler.roverOutOfBounds();
