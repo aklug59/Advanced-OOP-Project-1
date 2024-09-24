@@ -25,7 +25,6 @@
 
 
     <build>
-        <testSourceDirectory>src/test/src/</testSourceDirectory>
         <plugins>
 
             <plugin>
