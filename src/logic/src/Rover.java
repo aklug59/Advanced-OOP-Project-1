@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Rover {
 
     //Variable and Data structure declarations
-    GUI localRoverGUI = GUI.getGUIInstance();
     public static boolean finalCommand = false;
     static Position position;
 
@@ -12,7 +11,7 @@ public class Rover {
 
     public Rover(ArrayList<Character> newRover) {
         position = new Position(Character.digit(newRover.get(0), 10), Character.digit(newRover.get(1), 10), CardinalDirection.fromCharacter(newRover.get(2)));
-        localRoverGUI.addGUIRoverIcon(position);
+        Plateau.getMatrix()[position.y][position.x] = 'R';
         printRoverPosition();
     }
 
@@ -39,7 +38,9 @@ public class Rover {
                     position.heading = position.heading.ninetyDegreesRight();
                     break;
                 case 'M':
+                    Plateau.getMatrix()[position.y][position.x] = 'X';
                     position.moveOne();
+                    Plateau.getMatrix()[position.y][position.x] = 'R';
                     break;
                 default:
                     // code block
@@ -57,6 +58,11 @@ public class Rover {
 
     public static void printRoverPosition() {
         System.out.println("The rover is now at " + position.x + " " + position.y + ", Heading is " + position.heading);
-
+        for (int i = Plateau.getPlateauXMax()-1; i >= 0; i--) {
+            for (int j = 0; j < Plateau.getPlateauYMax(); j++) {
+                System.out.print(Plateau.getMatrix()[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
