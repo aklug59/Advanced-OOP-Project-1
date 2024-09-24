@@ -13,15 +13,16 @@ public class Rover {
     public Rover(ArrayList<Character> newRover) {
         position = new Position(Character.digit(newRover.get(0), 10), Character.digit(newRover.get(1), 10), CardinalDirection.fromCharacter(newRover.get(2)));
         localRoverGUI.addGUIRoverIcon(position);
+        printRoverPosition();
     }
 
 
     public static void moveRover(ArrayList<Character> moveCommand) {
-
         //Logic to move the rover by updating currPosition + currHeading AND send update the GUI.
 
         //For every character in the movement command, get the character and then perform appropriate logic is L, R or M
         for (int i = 0; i < moveCommand.size(); i++) {
+
             if (i == moveCommand.size() - 1) {
                 finalCommand = true;
             }
@@ -34,6 +35,7 @@ public class Rover {
                     position.heading = position.heading.ninetyDegreesLeft();
                     break;
                 case 'R':
+
                     position.heading = position.heading.ninetyDegreesRight();
                     break;
                 case 'M':
@@ -45,6 +47,7 @@ public class Rover {
 
             if (finalCommand) {
                 printRoverPosition();
+                finalCommand = false;
                 break;
             }
         }
