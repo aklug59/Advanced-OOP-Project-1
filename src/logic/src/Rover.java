@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Rover {
 
     //Variable and Data structure declarations
-    GUI localRoverGUI =  new GUI();
+    GUI localRoverGUI = GUI.getGUIInstance();
     public static boolean finalCommand = false;
     static Position position;
 

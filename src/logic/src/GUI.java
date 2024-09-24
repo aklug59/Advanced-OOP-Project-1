@@ -3,8 +3,19 @@ import java.awt.*;
 
 public class GUI {
 
+    private static GUI singleGUI;
     private JPanel plateauPanel;
     private final Color[] COLOR_ARRAY = {Color.decode("#660000"), Color.decode("#744700")};
+
+    private GUI() {}
+
+    public static GUI getGUIInstance() {
+        if (GUI.singleGUI == null) {
+            singleGUI = new GUI();
+        }
+        return singleGUI;
+
+    }
 
 
     public void createPlateau(int plateauXMax, int plateauYMax) {

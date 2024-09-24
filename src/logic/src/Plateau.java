@@ -4,20 +4,20 @@ public class Plateau {
 
     public static int plateauXMax = 0;
     public static int plateauYMax = 0;
-    public boolean plateauMade = false;
-    private final GUI plateauLocalGUI =  new GUI();
+    private final GUI plateauLocalGUI =  GUI.getGUIInstance();
     int intValue;
 
     public Plateau(ArrayList<Character> initialDimensions) {
 
-        if (!plateauMade) {
+
+        if (!CreationChecks.plateauMade) {
             plateauXMax = Character.getNumericValue(initialDimensions.get(0));
             plateauYMax = Character.getNumericValue(initialDimensions.get(1));
-            this.plateauMade = true;
+            CreationChecks.plateauMade = true;
             plateauLocalGUI.createPlateau(plateauXMax,plateauYMax);
 
         } else {
-            //Throw some type of error to inform the user a plateau already exists.
+            ErrorHandler.plateauExists();
         }
 
     }

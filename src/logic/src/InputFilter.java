@@ -4,8 +4,6 @@ public class InputFilter {
 
     public void validInput(String userInput) {
         if (userInput.matches("\\d{1} \\d{1}") || userInput.matches("\\d{1} \\d{1} [NESW]") || userInput.matches("[LMR]*")) {
-            System.out.println("Valid input");
-            System.out.println("Input was " + userInput);
             inputIdentifier(userInput);
         } else {
             System.out.println("That is not a valid Input!");

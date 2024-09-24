@@ -7,6 +7,10 @@ public class ErrorHandler {
         Rover.finalCommand = true;
     }
 
+    protected static void plateauExists() {
+        System.out.println("A plateau already exists!");
+    }
+
 
 
 }
