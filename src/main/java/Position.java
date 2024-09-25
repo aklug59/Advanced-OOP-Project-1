@@ -30,6 +30,9 @@ public class Position {
         this.heading = heading;
     }
 
+    /**
+     * Method to update the position of the rover
+     */
     final void moveOne() {
         switch (heading) {
             case CardinalDirection.NORTH:

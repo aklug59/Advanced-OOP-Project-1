@@ -7,8 +7,16 @@ public class GUI {
     private JPanel plateauPanel;
     private final Color[] COLOR_ARRAY = {Color.decode("#660000"), Color.decode("#744700")};
 
+    /**
+     * Singleton pattern to ensure there is only ever one instance of GUI
+     */
     private GUI() {}
 
+    /**
+     * GetGui method to allow outside classes to access the GUI instance.
+     *
+     * @return The one and only instance of a GUI
+     */
     public static GUI getGUIInstance() {
         if (GUI.singleGUI == null) {
             singleGUI = new GUI();
@@ -17,7 +25,11 @@ public class GUI {
 
     }
 
-
+    /**
+     * Method for creating a plateau out of Swing components, JFrame, JPanel, JTile.
+     * @param plateauXMax The x dimension of the plateau to be created
+     * @param plateauYMax The y dimension of the plateau to be created
+     */
     public void createPlateau(int plateauXMax, int plateauYMax) {
         JFrame frame = new JFrame();
         frame.setSize(1000,1000);
@@ -48,15 +60,27 @@ public class GUI {
         //Logic to create a JFrame out of Plateau dimensions
     }
 
+    /**
+     * Once a rover has been instantiated by the user, this method will put a rover icon onto the JPanel @ the position
+     * @param position the position of the rover.
+     */
     public void addGUIRoverIcon(final Position position) {
         //Logic to add a rover icon to the current GUI
     }
 
+
+    /**
+     * Method to move the rover around the GUI.
+     * @param currCommand The movement command for the rover from the user
+     */
     public void updateRoverGUI(char currCommand) {
         //Logic to update the rovers position on the GUI
 
     }
 
+    /**
+     * Jcomponent tile to assist the createPlateau method above in creation of the JPanel.
+     */
     class Tile extends JLabel {
 
         Tile(Color color) {
