@@ -7,7 +7,10 @@ public class Rover {
     static Position position;
 
 
-    //Rover constructor, takes an ArrayList containing the rovers starting position and heading
+    /**
+     * Rover constructor
+     * @param newRover Arraylist containing the starting position and starting heading of the new rover
+     */
 
     public Rover(ArrayList<Character> newRover) {
         position = new Position(Character.digit(newRover.get(0), 10), Character.digit(newRover.get(1), 10), CardinalDirection.fromCharacter(newRover.get(2)));
@@ -15,9 +18,11 @@ public class Rover {
         printRoverPosition();
     }
 
-
+    /**
+     * Method to move the rover by updating currPosition, currHeading AND send a movement update to the GUI.
+     * @param moveCommand Arraylist of VALID movement commands: L, R, M
+     */
     public static void moveRover(ArrayList<Character> moveCommand) {
-        //Logic to move the rover by updating currPosition + currHeading AND send update the GUI.
 
         //For every character in the movement command, get the character and then perform appropriate logic is L, R or M
         for (int i = 0; i < moveCommand.size(); i++) {
@@ -56,6 +61,9 @@ public class Rover {
 
     }
 
+    /**
+     * Method to print the rovers final position.
+     */
     public static void printRoverPosition() {
         System.out.println("The rover is now at " + position.x + " " + position.y + ", Heading is " + position.heading);
         for (int i = Plateau.getPlateauXMax()-1; i >= 0; i--) {
