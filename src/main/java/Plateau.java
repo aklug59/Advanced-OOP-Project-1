@@ -6,6 +6,7 @@ public class Plateau {
     public static int plateauYMax = 0;
     private final GUI plateauLocalGUI =  GUI.getGUIInstance();
     int intValue;
+    public static Character[][] plateauMatrix;
 
     /**
      * Plateau constructor.
