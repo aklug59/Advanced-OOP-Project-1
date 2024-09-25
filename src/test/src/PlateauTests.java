@@ -11,6 +11,7 @@ public class PlateauTests {
         ArrayList<Character> characterList = new ArrayList<>();
         characterList.add('7');
         characterList.add('7');
+        CreationChecks.plateauMade = false;
         Plateau plateauTestObject = new Plateau(characterList);
         // Expected dimensions are 7 x 7
         int expected = 7;

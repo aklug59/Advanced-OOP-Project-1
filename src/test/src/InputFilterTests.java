@@ -11,7 +11,7 @@ public class InputFilterTests {
         inputFilterTestObject.inputIdentifier("5 5");
         
         //Confirm that the created Plateau has x and y values of 5 and 5 respectively.
-        assertEquals(6, Plateau.plateauXMax);
+        assertEquals(5, Plateau.plateauXMax);
         assertEquals(5, Plateau.plateauYMax);
 
     }
