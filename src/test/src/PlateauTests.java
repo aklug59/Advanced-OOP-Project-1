@@ -9,6 +9,7 @@ public class PlateauTests {
     public void plateauDimensionsTest() {
         // Instantiate & populate plateau dimensions
         ArrayList<Character> characterList = new ArrayList<>();
+        CreationChecks.plateauMade = false;
         characterList.add('7');
         characterList.add('7');
         CreationChecks.plateauMade = false;

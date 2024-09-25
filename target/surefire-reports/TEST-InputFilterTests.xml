@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="InputFilterTests" time="0.366" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="InputFilterTests" time="0.385" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\aklug\.jdks\openjdk-21.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\aklug\AppData\Local\Temp\surefire3887406594685317156\surefirebooter-20240924191720907_3.jar C:\Users\aklug\AppData\Local\Temp\surefire3887406594685317156 2024-09-24T19-17-20_799-jvmRun1 surefire-20240924191720907_1tmp surefire_0-20240924191720907_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\aklug\AppData\Local\Temp\surefire12421234075463768994\surefirebooter-20240924192121410_3.jar C:\Users\aklug\AppData\Local\Temp\surefire12421234075463768994 2024-09-24T19-21-21_298-jvmRun1 surefire-20240924192121410_1tmp surefire_0-20240924192121410_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\aklug\OneDrive\Desktop\473 - Advanced OOP\Project 1\Advanced-OOP-Project-1\target\test-classes;C:\Users\aklug\OneDrive\Desktop\473 - Advanced OOP\Project 1\Advanced-OOP-Project-1\target\classes;C:\Users\aklug\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\aklug\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\aklug\AppData\Local\Temp\surefire3887406594685317156\surefirebooter-20240924191720907_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\aklug\AppData\Local\Temp\surefire12421234075463768994\surefirebooter-20240924192121410_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-58"/>
@@ -59,40 +59,40 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="inputFilterRoverTopBoundaryTest" classname="InputFilterTests" time="0.312">
+  <testcase name="inputFilterRoverTopBoundaryTest" classname="InputFilterTests" time="0.337">
     <system-out><![CDATA[The rover is now at 3 3, Heading is NORTH
 This command would cause the rover to go off the Plateau! Rover movement is paused and all subsequent commands ignored!
 The rover is now at 3 5, Heading is NORTH
 ]]></system-out>
   </testcase>
-  <testcase name="inputFilterRoverMoveTest" classname="InputFilterTests" time="0.002">
+  <testcase name="inputFilterRoverMoveTest" classname="InputFilterTests" time="0.001">
     <system-out><![CDATA[The rover is now at 2 2, Heading is NORTH
 The rover is now at 0 0, Heading is SOUTH
 ]]></system-out>
   </testcase>
-  <testcase name="inputFilterPlateauTest" classname="InputFilterTests" time="0.001">
+  <testcase name="inputFilterPlateauTest" classname="InputFilterTests" time="0.004">
     <system-out><![CDATA[A plateau already exists!
 ]]></system-out>
   </testcase>
-  <testcase name="inputFilterRoverCreationTest" classname="InputFilterTests" time="0.0">
+  <testcase name="inputFilterRoverCreationTest" classname="InputFilterTests" time="0.001">
     <system-out><![CDATA[The rover is now at 2 2, Heading is NORTH
 ]]></system-out>
   </testcase>
-  <testcase name="inputFilterRoverLeftBoundaryTest" classname="InputFilterTests" time="0.002">
+  <testcase name="inputFilterRoverLeftBoundaryTest" classname="InputFilterTests" time="0.0">
     <system-out><![CDATA[A plateau already exists!
 The rover is now at 3 3, Heading is WEST
 This command would cause the rover to go off the Plateau! Rover movement is paused and all subsequent commands ignored!
 The rover is now at 0 3, Heading is WEST
 ]]></system-out>
   </testcase>
-  <testcase name="inputFilterRoverBottomBoundaryTest" classname="InputFilterTests" time="0.001">
+  <testcase name="inputFilterRoverBottomBoundaryTest" classname="InputFilterTests" time="0.0">
     <system-out><![CDATA[A plateau already exists!
 The rover is now at 3 3, Heading is SOUTH
 This command would cause the rover to go off the Plateau! Rover movement is paused and all subsequent commands ignored!
 The rover is now at 3 0, Heading is SOUTH
 ]]></system-out>
   </testcase>
-  <testcase name="inputFilterRoverRightBoundaryTest" classname="InputFilterTests" time="0.003">
+  <testcase name="inputFilterRoverRightBoundaryTest" classname="InputFilterTests" time="0.0">
     <system-out><![CDATA[A plateau already exists!
 The rover is now at 3 3, Heading is EAST
 This command would cause the rover to go off the Plateau! Rover movement is paused and all subsequent commands ignored!
