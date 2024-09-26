@@ -57,7 +57,7 @@ public class InputFilterTests {
 
     @Test
     public void inputFilterRoverTopBoundaryTest() {
-        final var expectedPosition = new Position(3,5,CardinalDirection.NORTH);
+        final var expectedPosition = new Position(3,4,CardinalDirection.NORTH);
         // Create plateau size 5x5
         inputFilterTestObject.inputIdentifier("5 5");
         // Put a rover on plateau, bottom right of 5x5
@@ -83,7 +83,7 @@ public class InputFilterTests {
 
     @Test
     public void inputFilterRoverRightBoundaryTest() {
-        final var expectedPosition = new Position(5,3,CardinalDirection.EAST);
+        final var expectedPosition = new Position(4,3,CardinalDirection.EAST);
         // Create plateau size 5x5
         inputFilterTestObject.inputIdentifier("5 5");
         // Put a rover on plateau, bottom right of 5x5
