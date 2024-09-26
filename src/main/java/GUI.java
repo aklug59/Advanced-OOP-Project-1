@@ -7,6 +7,9 @@ public class GUI {
     private JPanel plateauPanel;
     private final Color[] COLOR_ARRAY = {Color.decode("#660000"), Color.decode("#744700")};
 
+    /**
+     * Singleton pattern to ensure there is only ever one instance of GUI
+     */
     private GUI() {}
 
     public static GUI getGUIInstance() {
